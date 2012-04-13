@@ -10,6 +10,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAAddinFramework", "..\Ente
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMLToolingFramework", "..\UML-Tooling-Framework\UMLToolingFramework\UMLToolingFramework.csproj", "{0FC55607-C9D0-442D-941C-F23AD00CB318}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8AA888BA-C0B3-44F2-8E57-3775D9695552}"
+	ProjectSection(SolutionItems) = postProject
+		README = README
+		index.html = index.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

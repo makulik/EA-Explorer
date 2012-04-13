@@ -1,0 +1,21 @@
+﻿EA-Explorer Enterprise Architect AddIn
+by Günther Makulik (g-makulik@t-online.de)
+Copyright 2012 , Günther Makulik
+
+Homepage:
+http://makulik.github.com/EA-Explorer/
+
+Description:
+The EA-Explorer Enterprise Architect Add-in is a tool to inspect Sparx Systems 
+Enterprise Architect Object Model API.
+
+Contains:
+- EAExplorer/ The EA-Explorer AddIn implementation
+- EAExplorer_Setup/ The EA-Explorer AddIn installer implementation
+
+Dependencies:
+- EA Add-in Framework: http://geertbellekens.github.com/Enterprise-Architect-Add-in-Framework/
+- UML Tooling Framework: https://github.com/GeertBellekens/UML-Tooling-Framework
+
+Just download the dependency projects from the URLs above and place them beneath the
+EA-Explorer solution directory.
