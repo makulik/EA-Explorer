@@ -1,0 +1,39 @@
+﻿<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="EAExplorer">
+					<Component Id="EAExplorerRegEntries" Guid="8439A7F4-D42F-43AC-B91D-CBF823A89DDE">
+						<RegistryKey Root="HKCU" Key="Software\Sparx Systems\EAAddins\EAExplorer" Action="createAndRemoveOnUninstall">
+							<RegistryValue Type="string" Value="EAExplorer.EAExplorerClass" />
+						</RegistryKey>
+					</Component>
+					<Component Id="EAExplorer" Guid="281AAA5F-4F0B-4320-9144-58E64CD1E72C" DiskId="1">
+						<File Id="fil1AE300FC626971E45F601148DAE5EC44" Name="EAExplorer.dll" Source="..\EAExplorer\bin\Debug\EAExplorer.dll" KeyPath="yes" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32\1.0.0.0" Name="Class" Value="EAExplorer.EAExplorerControl" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32\1.0.0.0" Name="Assembly" Value="EAExplorer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#fil1AE300FC626971E45F601148DAE5EC44]" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32" Name="Class" Value="EAExplorer.EAExplorerControl" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32" Name="Assembly" Value="EAExplorer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{AA1EC283-9C34-4AE4-9D39-6811EE545DDC}\InprocServer32" Name="CodeBase" Value="file:///[#fil1AE300FC626971E45F601148DAE5EC44]" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32\1.0.0.0" Name="Class" Value="EAExplorer.EAExplorerClass" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32\1.0.0.0" Name="Assembly" Value="EAExplorer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#fil1AE300FC626971E45F601148DAE5EC44]" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32" Name="Class" Value="EAExplorer.EAExplorerClass" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32" Name="Assembly" Value="EAExplorer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32" Name="CodeBase" Value="file:///[#fil1AE300FC626971E45F601148DAE5EC44]" Type="string" Action="write" />
+						<File Id="EAAddinFramework.dll" Name="EAAddinFramework.dll" Source="..\EAExplorer\bin\Debug\EAAddinFramework.dll" />
+						<File Id="EAExplorer.tlb" Name="EAExplorer.tlb" Source="..\EAExplorer\bin\Debug\EAExplorer.tlb" />
+						<File Id="UMLToolingFramework.dll" Name="UMLToolingFramework.dll" Source="..\EAExplorer\bin\Debug\UMLToolingFramework.dll" />
+					</Component>
+				</Directory>
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
