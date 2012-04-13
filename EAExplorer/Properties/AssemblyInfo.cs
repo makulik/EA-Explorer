@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EAExplorer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Thuis")]
+[assembly: AssemblyCompany("Günther Makulik")]
 [assembly: AssemblyProduct("EAExplorer")]
-[assembly: AssemblyCopyright("Copyright © Thuis 2011")]
+[assembly: AssemblyCopyright("Copyright © Günther Makulik 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

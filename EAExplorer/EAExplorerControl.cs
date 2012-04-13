@@ -43,7 +43,7 @@ namespace EAExplorer
 				case EA.ObjectType.otElement:
 					EA.Element element = Repository.GetElementByGuid(GUID);
 					currentEaObject = element;
-					currentEaObjectCollections = GetElementCollections(element);
+					currentEaObjectCollections = new EAElementCollections(element);
 					eaObjectName.Text = element.Name;
 					showEmbeddedObjects.Enabled = true;
 					break;
@@ -81,13 +81,6 @@ namespace EAExplorer
 			SynchPropertyGridSelection();
 		} 
 		
-		object GetElementCollections(EA.Element element)
-		{
-			EAElementCollections eaElementCollections = 
-				new EAElementCollections(element.EmbeddedElements,element.Attributes,element.Methods,element.Connectors);
-			return eaElementCollections;
-		}
-
 		object GetPackageCollections(EA.Package package)
 		{
 			System.Collections.Generic.Dictionary<string,EA.Collection> packageCollections = new System.Collections.Generic.Dictionary<string,EA.Collection>();
