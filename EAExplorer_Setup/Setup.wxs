@@ -10,6 +10,8 @@
 			Comments="Comments"
 			InstallerVersion="200"
 			Compressed="yes"/>
+		<Icon Id="eaexplorer_icon.exe" SourceFile="..\EAExplorer\ea_explorer.ico"/>
+		<Property Id="ARPPRODUCTICON" Value="eaexplorer_icon.exe" />
 		<!--
 			Source media for the installation. 
  			Specifies a single cab file to be embedded in the installer's .msi. 

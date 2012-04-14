@@ -8,6 +8,7 @@
  */
 using System;
 using System.Drawing.Text;
+using System.Linq;
 
 namespace EAExplorer
 {
@@ -125,7 +126,7 @@ namespace EAExplorer
 	    private System.ComponentModel.ExpandableObjectConverter converter = null;
 	
 	    public BrowsableCollectionPropertyDescriptor(EABrowsableObjectsCollection<T> coll, int idx) 
-	    : base( "#"+idx.ToString(), null )
+	    : base( GetNameProperty(coll,idx), null )
 	    {
 	        this.collection = coll;
 	        this.index = idx;
@@ -161,42 +162,27 @@ namespace EAExplorer
 			}
 		}
 	
-//	    public override string DisplayName
-//	    {
-//	        get 
-//	        {
-//	            T browsableObject = collection[index];
-//	            return browsableObject.Name;
-//	        }
-//	    }
-//	
-//	    public override string Description
-//	    {
-//	        get
-//	        {
-//	            T browsableObject = collection[index];
-//	            return browsableObject.Notes;
-//	        }
-//	    }
+	    public override string Description
+	    {
+	        get
+	        {
+	            return typeof(T).ToString();
+	        }
+	    }
 	
 	    public override object GetValue(object component)
 	    {
 	    	return collection[index];
 	    }
-	
+	    
 	    public override bool IsReadOnly
 	    {
 	        get { return true;  }
 	    }
 	
-	    public override string Name
-	    {
-	        get { return "#"+index.ToString(); }
-	    }
-	
 	    public override Type PropertyType
 	    {
-	    	get { return collection[index].GetType(); }
+	    	get { return typeof(T).GetType(); }
 	    }
 	
 	    public override void ResetValue(object component) 
@@ -212,6 +198,25 @@ namespace EAExplorer
 	    {
 	        // this.collection[index] = value;
 	    }
+	    
+	    private static string GetNameProperty(EABrowsableObjectsCollection<T> coll, int idx)
+        {
+	    	int displayIndex = idx + 1;
+        	string name = "#"+displayIndex.ToString();
+            T browsableObject = coll[idx];
+            EA.App app = System.Runtime.InteropServices.Marshal.GetActiveObject("EA.App") as EA.App;
+            EA.Repository repository = app.Repository;
+            
+            EADualInterface<T> dualInterface = new EADualInterface<T>(browsableObject);
+            string objectName = dualInterface.GetPropertyValue("Name");
+            if(!string.IsNullOrEmpty(objectName))
+            {
+            	name = name + "(" + objectName + ")";
+            }
+            
+            return name;
+        }
+
 	}
 	
 	public class EABrowsableObjectConverter<T>
@@ -221,6 +226,35 @@ namespace EAExplorer
 		{
 			T browsableObject = (T)value;
 			return base.ConvertTo(context,culture,browsableObject,browsableObject.GetType());
+		}
+	}
+	
+	internal class EADualInterface<T>
+	{
+		System.Type dualInterface = null;
+		T browsableObject;
+		public EADualInterface(T browsableObject)
+		{
+			this.browsableObject = browsableObject;
+            dualInterface = typeof(T).GetInterface("IDual" + typeof(T).Name);
+		}
+		
+		public string GetPropertyValue(string propertyName)
+		{
+			if(dualInterface != null)
+			{
+	            System.Reflection.PropertyInfo property = dualInterface.GetProperty(propertyName);
+	            if(property != null)
+	            {
+	            	object propertyValue = property.GetValue(browsableObject,null);
+	            	if(propertyValue != null)
+	            	{
+	            		return propertyValue.ToString();
+	            	}
+	            }
+			}
+
+			return "";
 		}
 	}
 }

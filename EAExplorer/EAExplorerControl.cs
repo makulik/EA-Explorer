@@ -30,15 +30,15 @@ namespace EAExplorer
 		{			
 			eaObjectType.Text = ot.ToString();
 			eaObjectName.Text = "?";
-			showEmbeddedObjects.Checked = false;
 			switch(ot)
 			{
 				case EA.ObjectType.otAttribute:
 					EA.Attribute attribute = Repository.GetAttributeByGuid(GUID);
 					currentEaObject = attribute;
+					currentEaObjectCollections = null;
 					eaObjectName.Text = attribute.Name;
-					propertyGrid.SelectedObject = attribute;
 					showEmbeddedObjects.Enabled = false;
+					showEmbeddedObjects.Checked = false;
 					break;
 				case EA.ObjectType.otElement:
 					EA.Element element = Repository.GetElementByGuid(GUID);
@@ -50,27 +50,31 @@ namespace EAExplorer
 				case EA.ObjectType.otMethod:
 					EA.Method method = Repository.GetMethodByGuid(GUID);
 					currentEaObject = method;
+					currentEaObjectCollections = null;
 					eaObjectName.Text = method.Name;
-					propertyGrid.SelectedObject = method;
 					showEmbeddedObjects.Enabled = false;
+					showEmbeddedObjects.Checked = false;
 					break;
 				case EA.ObjectType.otPackage:
 					EA.Package package = Repository.GetPackageByGuid(GUID);
 					currentEaObject = package;
+					currentEaObjectCollections = new EAPackageCollections(package);
 					eaObjectName.Text = package.Name;
 					showEmbeddedObjects.Enabled = true;
-					propertyGrid.SelectedObject = package;
 					break;
 				case EA.ObjectType.otConnector:
 					EA.Connector connector = Repository.GetConnectorByGuid(GUID);
 					currentEaObject = connector;
+					currentEaObjectCollections = null;
 					showEmbeddedObjects.Enabled = false;
+					showEmbeddedObjects.Checked = false;
 					break;
 				default:
 					currentEaObject = null;
 					currentEaObjectCollections = null;
 					propertyGrid.SelectedObject = null;
 					showEmbeddedObjects.Enabled = false;
+					showEmbeddedObjects.Checked = false;
 					break;
 			}
 			SynchPropertyGridSelection();

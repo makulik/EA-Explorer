@@ -29,8 +29,9 @@
 						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
 						<RegistryValue Root="HKCR" Key="CLSID\{B23A54D7-E856-3385-9B22-2B5E59BAF63F}\InprocServer32" Name="CodeBase" Value="file:///[#fil1AE300FC626971E45F601148DAE5EC44]" Type="string" Action="write" />
 						<File Id="EAAddinFramework.dll" Name="EAAddinFramework.dll" Source="..\EAExplorer\bin\Debug\EAAddinFramework.dll" />
-						<File Id="EAExplorer.tlb" Name="EAExplorer.tlb" Source="..\EAExplorer\bin\Debug\EAExplorer.tlb" />
 						<File Id="UMLToolingFramework.dll" Name="UMLToolingFramework.dll" Source="..\EAExplorer\bin\Debug\UMLToolingFramework.dll" />
+						<File Id="EAAddinFramework.pdb" Name="EAAddinFramework.pdb" Source="..\EAExplorer\bin\Debug\EAAddinFramework.pdb" />
+						<File Id="Debug.EAExplorer.tlb" Name="EAExplorer.tlb" Source="..\EAExplorer\bin\Debug\EAExplorer.tlb" />
 					</Component>
 				</Directory>
 			</Directory>

@@ -71,6 +71,7 @@
     <Compile Include="EAExplorerClass.cs" />
     <Compile Include="EAExplorerControl.cs" />
     <Compile Include="EAExplorerControl.Designer.cs" />
+    <Compile Include="EAPackageCollections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

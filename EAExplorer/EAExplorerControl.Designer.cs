@@ -104,13 +104,12 @@ namespace EAExplorer
 			// 
 			// showEmbeddedObjects
 			// 
-			this.showEmbeddedObjects.Appearance = System.Windows.Forms.Appearance.Button;
+			this.showEmbeddedObjects.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.showEmbeddedObjects.Location = new System.Drawing.Point(3, 50);
 			this.showEmbeddedObjects.Name = "showEmbeddedObjects";
-			this.showEmbeddedObjects.Size = new System.Drawing.Size(228, 24);
+			this.showEmbeddedObjects.Size = new System.Drawing.Size(154, 24);
 			this.showEmbeddedObjects.TabIndex = 8;
-			this.showEmbeddedObjects.Text = "Show Embedded Objects";
-			this.showEmbeddedObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.showEmbeddedObjects.Text = "Show Collections";
 			this.showEmbeddedObjects.UseVisualStyleBackColor = true;
 			// 
 			// EAExplorerControl
